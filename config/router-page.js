@@ -8,5 +8,7 @@
 module.exports = {
     // homepage
     '/': '/home/index',
-    '/demo': '/demo/demo1'
+    '/demo': '/demo/demo1',
+	'/gestures':'/page/gestures',
+    '/i18n':'/page/i18n'
 }

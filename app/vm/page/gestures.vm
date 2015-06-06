@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>$pageTitle</title>
+    <!-- build:css(.tmp/concat) /static/css/index.css -->
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/pages/home/index.css">
+    <!-- endbuild -->
+    <style>
+        .foo{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="foo">.....</div>
+
+    <script src="/static/js/lib/jquery/jquery.js"></script>
+    <script src="/static/js/lib/hammerjs/hammer.js"></script>
+    <script>
+        var hammertime = new Hammer($("html")[0]);
+        hammertime.on('panleft', function(ev) {
+            $(".foo").html("鼠标向左滑动");
+        });
+
+        hammertime.on('panright', function(ev) {
+            $(".foo").html("鼠标向右滑动");
+        });
+
+        hammertime.on('panstart', function(ev) {
+            console.log(ev);
+        });
+
+        document.oncontextmenu = function(e){
+            return false;
+        }
+
+    </script>
+</body>
+</html>

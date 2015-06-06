@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>$pageTitle</title>
+    <style>
+        .foo{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="foo" data-i18n="foo"></div>
+
+    <button class="en" data-i18n="lng.en"></button>
+    <button class="zh" data-i18n="lng.zh"></button>
+
+    <script src="/static/js/lib/jquery/jquery.js"></script>
+    <script src="/static/js/lib/i18next/i18next.js"></script>
+    <script>
+        $.i18n.init({
+            //lng: 'en',
+            ns: { namespaces: ['i18n.test'], defaultNs: 'i18n.test'},
+            resGetPath: '/static/locales/__lng__/__ns__.json',
+            useLocalStorage: false,
+            debug: false,
+            useCookie:true,
+            fallbackLng:false
+        }, function(t) {
+            $("body").i18n();
+        });
+
+        $(".en").click(function () {
+            $.i18n.setLng('en',function(){
+                $("body").i18n();
+            });
+        })
+        $(".zh").click(function () {
+            $.i18n.setLng('zh',function(){
+                $("body").i18n();
+            });
+        })
+    </script>
+</body>
+</html>

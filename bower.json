@@ -26,11 +26,15 @@
     "jquery": "*",
     "underscore": "*",
     "backbone": "*",
-    "requirejs-babel": "*"
+    "requirejs-babel": "*",
+    "hammerjs": "*"
   },
   "exportsOverride": {
     "requirejs-babel": {
       "js": "*.js"
     }
+  },
+  "devDependencies": {
+    "i18next": "~1.9.0"
   }
 }

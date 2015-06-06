@@ -3,8 +3,6 @@
  * r.js打包时会根据config/bundle.js的配置打包生成新的模块
  */
 
-'use strict';
-
 define(function() {
   //foo
 });
